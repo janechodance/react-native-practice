@@ -43,7 +43,11 @@ export default function Home() {
           <Welcome
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
-            handleClick={() => {}}
+            handleClick={() => {
+              if (searchTerm) {
+                router.push(`/search/${searchTerm}`);
+              }
+            }}
           />
           <Popularjobs />
           <Nearbyjobs />

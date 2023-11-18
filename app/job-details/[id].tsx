@@ -6,12 +6,7 @@ import {
   ActivityIndicator,
   RefreshControl,
 } from "react-native";
-import {
-  Stack,
-  useRouter,
-  useLocalSearchParams,
-  useGlobalSearchParams,
-} from "expo-router";
+import { Stack, useRouter, useGlobalSearchParams } from "expo-router";
 import { useCallback, useState } from "react";
 
 import {
@@ -28,7 +23,7 @@ import useFetch from "../../hook/useFetch";
 const tabs = ["About", "Qualifications", "Responsibilities"];
 
 export default function JobDetails() {
-  const params = useLocalSearchParams();
+  const params = useGlobalSearchParams();
   const router = useRouter();
   const { data, isLoading, error, refetch } = useFetch("job-details", {
     job_id: params.id,
