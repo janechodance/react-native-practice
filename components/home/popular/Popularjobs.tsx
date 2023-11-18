@@ -10,7 +10,7 @@ import { useState } from "react";
 import { useRouter } from "expo-router";
 
 import styles from "./popularjobs.style";
-import { COLORS, SIZES } from "../../../constants";
+import { COLORS, FONT, SIZES } from "../../../constants";
 import PopularJobCard from "../../common/cards/popular/PopularJobCard";
 import useFetch from "../../../hook/useFetch";
 
@@ -23,12 +23,13 @@ const Popularjobs = () => {
   const [selectedJob, setSelectedJob] = useState("");
 
   const handleCardPress = () => {};
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Popular jobs</Text>
-        <TouchableOpacity style={styles.headerBtn}>
-          <Text>Show All</Text>
+        <TouchableOpacity>
+          <Text style={styles.headerBtn}>Show All</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.cardsContainer}>
