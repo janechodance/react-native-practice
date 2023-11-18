@@ -16,12 +16,7 @@ const ScreenHeaderBtn: React.FC<Props> = ({
 }) => {
   return (
     <TouchableOpacity style={styles.btnContainer} onPress={handlePress}>
-      <Image
-        source={iconUrl}
-        resizeMode="cover"
-        width={dimension}
-        height={dimension}
-      />
+      <Image source={iconUrl} resizeMode="cover" width={20} height={10} />
     </TouchableOpacity>
   );
 };

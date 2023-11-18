@@ -14,6 +14,7 @@ export default function Home() {
   const handlePress = () => {
     console.log("Press!");
   };
+  const [searchTerm, setSearchTerm] = useState("");
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
       <Stack.Screen
@@ -23,19 +24,27 @@ export default function Home() {
           headerLeft: () => (
             <ScreenHeaderBtn
               iconUrl={icons.menu}
-              dimension={60}
+              dimension={0.6}
               handlePress={handlePress}
             />
           ),
           // headerRight: () => (
-          //   <ScreenHeaderBtn iconUrl={images.profile} dimension={20} />
+          //   <ScreenHeaderBtn
+          //     iconUrl={images.profile}
+          //     dimension={0.1}
+          //     handlePress={handlePress}
+          //   />
           // ),
           headerTitle: "",
         }}
       />
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flex: 1, padding: SIZES.medium }}>
-          <Welcome />
+          <Welcome
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            handleClick={() => {}}
+          />
           <Popularjobs />
           <Nearbyjobs />
         </View>
