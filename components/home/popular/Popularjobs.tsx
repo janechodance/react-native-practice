@@ -10,7 +10,7 @@ import { useState } from "react";
 import { useRouter } from "expo-router";
 
 import styles from "./popularjobs.style";
-import { COLORS, FONT, SIZES } from "../../../constants";
+import { COLORS, SIZES } from "../../../constants";
 import PopularJobCard from "../../common/cards/popular/PopularJobCard";
 import useFetch from "../../../hook/useFetch";
 
@@ -47,7 +47,7 @@ const Popularjobs = () => {
                 handleCardPress={handleCardPress}
               />
             )}
-            keyExtractor={(item) => item?.job_id}
+            keyExtractor={(item: any) => item?.job_id}
             contentContainerStyle={{ columnGap: SIZES.medium }}
             horizontal
           />
