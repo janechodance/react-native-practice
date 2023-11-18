@@ -13,7 +13,7 @@ interface Props {
     job_country: string;
   };
   selectedJob: any;
-  handleCardPress: () => void;
+  handleCardPress: (item: any) => void;
 }
 
 const PopularJobCard: React.FC<Props> = ({
@@ -24,7 +24,7 @@ const PopularJobCard: React.FC<Props> = ({
   return (
     <TouchableOpacity
       style={styles.container(selectedJob, item)}
-      onPress={() => handleCardPress()}
+      onPress={() => handleCardPress(item)}
     >
       <TouchableOpacity style={styles.logoContainer(selectedJob, item)}>
         <Image
